@@ -1,6 +1,0 @@
-01:17:41,099 [           main] DEBUG controller:31 - 加载Osgi类
-01:17:41,111 [           main] DEBUG controller:22 - 返回Osgi实例
-01:17:41,111 [           main] DEBUG controller:40 - 返回Osgi方法
-01:18:27,667 [           main] DEBUG controller:31 - 加载Osgi类
-01:18:27,679 [           main] DEBUG controller:22 - 返回Osgi实例
-01:18:27,679 [           main] DEBUG controller:40 - 返回Osgi方法
