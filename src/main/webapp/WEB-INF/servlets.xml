@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	      <props>
+	        <prop key="/listcourse.html">listCourseController</prop>
+	        <prop key="/liststudent.html">listStudentController</prop>
+	      </props>
+	    </property>
+	</bean>
+	<bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+	    <property name="resourceLoaderPath">
+	      <value>/WEB-INF/velocity/</value>
+	    </property>
+	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+	    <property name="suffix" value=".vm"/>
+	</bean>
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+	<bean id="mysqlDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:baoxianMysqlDS"/>
+	</bean>	
+	<!-- Transaction manager for a single JDBC DataSource -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="mysqlDataSource" />
+	</bean>
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+	</bean>
+	<!-- MYSQL 开始 -->
+	<bean id="mysqlReaderDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:baoxianMysqlDS" />
+	</bean>
+
+	<bean id="mysqlReaderMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="WEB-INF/ibatis/mysql/sql-map-config.xml" />
+		<property name="dataSource" ref="mysqlDataSource" />
+	</bean>
+
+	<bean id="mysqlWriterDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:baoxianMysqlDS" />
+	</bean>
+
+	<bean id="mysqlWriterMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="WEB-INF/ibatis/mysql/sql-map-config.xml" />
+		<property name="dataSource" ref="mysqlDataSource" />
+	</bean>
+	<!-- MYSQL 结束-->
+</beans>

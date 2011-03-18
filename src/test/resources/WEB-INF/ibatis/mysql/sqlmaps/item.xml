@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="osgiitem">
+	<typeAlias alias="OsgiItem" type="com.taobao.baoxian.pojo.OsgiItem"/>
+	<select id="getItemById" resultClass="com.taobao.baoxian.pojo.OsgiItem" parameterClass="int">
+		<![CDATA[
+		select id,itemid,jarpath from item where itemid=#value#
+		]]>
+	</select>
+</sqlMap>
