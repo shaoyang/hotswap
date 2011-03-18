@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="student">
+	<typeAlias alias="Student" type="com.taobao.baoxian.pojo.Student"/>
+	<resultMap id="studentList" class="Student">
+		<result property="id" column="id"/>
+		<result property="firstname" column="firstname"/>
+		<result property="lastname" column="lastname"/>
+	</resultMap>
+	
+	<select id="getAllStudents" resultMap="studentList">
+	<![CDATA[
+		select * from student
+	]]>
+	</select>
+	
+	<select id="getStudentById" resultClass="com.taobao.baoxian.pojo.Student" parameterClass="int">
+		<![CDATA[
+		select id,firstname,lastname from student where id=#value#
+		]]>
+	</select>
+
+	<insert id="insertStudent" parameterClass="com.taobao.baoxian.pojo.Student">
+		 <![CDATA[
+		 insert into student(firstname,lastname) values(#firstname#,#lastname#)
+		 ]]>
+	</insert>
+
+</sqlMap>

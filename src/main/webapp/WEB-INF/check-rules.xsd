@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="GBK"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://baoxian.taobao.com/tpl/tpl-check-rules"
+	xmlns:tpl="http://baoxian.taobao.com/tpl/tpl-check-rules"
+	elementFormDefault="qualified">
+
+	<!-- 基础元素定义 -->
+	<xsi:element name="check" type="tpl:checkType">
+	<!-- 
+		<xsi:key name="itemKey">
+			<xsi:selector xpath="tpl:item"></xsi:selector>
+			<xsi:field xpath="@name"></xsi:field>
+		</xsi:key>
+ 	-->
+	</xsi:element>
+	<xsi:complexType name="checkType">
+		<xsi:sequence>
+			<xsi:element ref="tpl:item" minOccurs="0" maxOccurs="unbounded" />
+		</xsi:sequence>
+	</xsi:complexType>
+
+	<xsi:element name="item">
+		<xsi:complexType>
+			<xsi:sequence>
+				<xsi:group ref="tpl:rulesGroup" minOccurs="0" maxOccurs="unbounded" />
+			</xsi:sequence>
+			<xsi:attribute name="name" use="required">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<xsi:minLength value="1" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>
+			<xsi:attribute name="byPattern" use="optional" default="false">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<xsi:enumeration value="true" />
+						<xsi:enumeration value="false" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>
+			<!-- 是否捆绑校验 -->
+			<xsi:attribute name="bound" use="optional" default="false">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<xsi:enumeration value="true" />
+						<xsi:enumeration value="false" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>
+			<!-- 是否包含在循环体内 -->
+			<xsi:attribute name="inLoop" use="optional" default="false">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<xsi:enumeration value="true" />
+						<xsi:enumeration value="false" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>
+		</xsi:complexType>
+	</xsi:element>
+
+
+	<!-- 出错信息定义 -->
+	<xsi:element name="errmsg" type="xsi:string" />
+
+	<!-- 验证规则定义 -->
+	<xsi:group name="rulesGroup">
+		<xsi:choice>
+			<!-- 验证规则 -->
+			<xsi:element ref="tpl:custom" minOccurs="0" />
+			<xsi:element ref="tpl:required" minOccurs="0" />
+			<xsi:element ref="tpl:regx" minOccurs="0" />
+			<xsi:element ref="tpl:dateRange" minOccurs="0" />
+			<xsi:element ref="tpl:ageRange" minOccurs="0" />
+			<xsi:element ref="tpl:gt" minOccurs="0" />
+			<xsi:element ref="tpl:lt" minOccurs="0" />
+			<xsi:element ref="tpl:minSize" minOccurs="0" />
+			<xsi:element ref="tpl:maxSize" minOccurs="0" />
+			<xsi:element ref="tpl:sum" minOccurs="0" />
+			<xsi:element ref="tpl:idCard" minOccurs="0" />
+			<xsi:element ref="tpl:idCardUnion" minOccurs="0" />
+			<xsi:element ref="tpl:length" minOccurs="0" />
+			<!-- 出错信息 -->
+			<xsi:element ref="tpl:errmsg" minOccurs="0" />
+		</xsi:choice>
+	</xsi:group>
+
+	<xsi:complexType name="ruleBody">
+		<xsi:all>
+			<xsi:element ref="tpl:when" minOccurs="0" />
+			<xsi:element ref="tpl:errmsg" minOccurs="0" />
+		</xsi:all>
+	</xsi:complexType>
+
+	<!-- 必填（选） -->
+	<xsi:element name="required" type="tpl:ruleBody" />
+
+	<!-- 正则校验 -->
+	<xsi:element name="regx">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="expression" type="xsi:string"
+						use="optional" />
+					<xsi:attribute name="rule" use="optional">
+						<xsi:simpleType>
+							<xsi:restriction base="xsi:string">
+								<!-- 日期格式 -->
+								<xsi:enumeration value="date" />
+								<!-- 时间格式 -->
+								<xsi:enumeration value="time" />
+								<!-- 日期时间格式 -->
+								<xsi:enumeration value="datetime" />
+								<!-- email格式 -->
+								<xsi:enumeration value="email" />
+								<!-- 数字格式 -->
+								<xsi:enumeration value="number" />
+							</xsi:restriction>
+						</xsi:simpleType>
+					</xsi:attribute>
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 最小字数 -->
+	<xsi:element name="minSize">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="num" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 最大字数 -->
+	<xsi:element name="maxSize">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="num" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 生日范围 大于等于 min 小于等于 max -->
+	<xsi:element name="ageRange">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="min" type="xsi:int" use="required" />
+					<xsi:attribute name="max" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 校验身份证号码 -->
+	<xsi:element name="idCard">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+	
+	<!-- 校验身份证号码, 关联生日和性别 -->
+	<xsi:element name="idCardUnion">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="genderItem" type="xsi:string"
+						use="optional" />
+					<xsi:attribute name="birthdayItem" type="xsi:string"
+						use="optional" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 校验受益比例之和 -->
+	<xsi:element name="sum">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="result" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 日期范围 大于等于  min 小于等于 max -->
+	<xsi:element name="dateRange">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="min" type="xsi:string" use="optional" />
+					<xsi:attribute name="max" type="xsi:string" use="optional" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 大于某个整数 -->
+	<xsi:element name="gt">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="value" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 小于某个整数 -->
+	<xsi:element name="lt">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="value" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 字符串长度 -->
+	<xsi:element name="length">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="num" type="xsi:int" use="required" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 自定义校验 -->
+	<xsi:element name="custom">
+		<xsi:complexType>
+			<xsi:complexContent>
+				<xsi:extension base="tpl:ruleBody">
+					<xsi:attribute name="validatorName" type="xsi:string"
+						use="required" />
+					<xsi:anyAttribute processContents="skip" />
+				</xsi:extension>
+			</xsi:complexContent>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- ##########################################################-->
+	<!-- 条件定义 -->
+	<xsi:element name="when">
+		<xsi:complexType>
+			<xsi:choice>
+				<xsi:element ref="tpl:and" minOccurs="0" />
+				<xsi:element ref="tpl:or" minOccurs="0" />
+				<xsi:element ref="tpl:boolexpr" minOccurs="0" />
+			</xsi:choice>
+		</xsi:complexType>
+	</xsi:element>
+
+	<!-- 逻辑操作 -->
+	<xsi:complexType name="logicBody">
+		<xsi:choice>
+			<xsi:group ref="tpl:boolexprGroup" minOccurs="2" maxOccurs="unbounded" />
+		</xsi:choice>
+	</xsi:complexType>
+	<xsi:group name="boolexprGroup">
+		<xsi:choice>
+			<xsi:element ref="tpl:boolexpr" maxOccurs="unbounded" />
+			<xsi:element ref="tpl:or" maxOccurs="unbounded" />
+			<xsi:element ref="tpl:and" maxOccurs="unbounded" />
+		</xsi:choice>
+	</xsi:group>
+
+	<!-- 逻辑与 -->
+	<xsi:element name="and" type="tpl:logicBody" />
+	<!-- 逻辑或 -->
+	<xsi:element name="or" type="tpl:logicBody" />
+	<!-- 布尔操作表达式 -->
+	<xsi:element name="boolexpr">
+		<xsi:complexType>
+			<xsi:attribute name="left" use="required" type="xsi:string" />
+			<xsi:attribute name="op" use="required">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<!-- == -->
+						<xsi:enumeration value="eq" />
+						<!-- < -->
+						<xsi:enumeration value="lt" />
+						<!-- > -->
+						<xsi:enumeration value="gt" />
+						<!-- <= -->
+						<xsi:enumeration value="le" />
+						<!-- >= -->
+						<xsi:enumeration value="ge" />
+						<!-- != -->
+						<xsi:enumeration value="ne" />
+						<!-- checked表单是否选中 -->
+						<xsi:enumeration value="checked" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>
+			<xsi:attribute name="right" use="required" type="xsi:string" />
+			<!-- 左值是否是循环体外部变量 -->
+			<xsi:attribute name="leftAtOuter" use="optional" default="false">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<xsi:enumeration value="true" />
+						<xsi:enumeration value="false" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>			
+			<!-- 右值是否是循环体外部变量 -->
+			<xsi:attribute name="rightAtOuter" use="optional" default="false">
+				<xsi:simpleType>
+					<xsi:restriction base="xsi:string">
+						<xsi:enumeration value="true" />
+						<xsi:enumeration value="false" />
+					</xsi:restriction>
+				</xsi:simpleType>
+			</xsi:attribute>			
+		</xsi:complexType>
+	</xsi:element>
+</xsi:schema>

@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="GBK"?>
+<check xmlns="http://baoxian.taobao.com/tpl/tpl-check-rules"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://baoxian.taobao.com/tpl/tpl-check-rules ">
+
+	<item name="holder_name">
+		<required>
+			<errmsg>
+  			<![CDATA[投保人姓名：请填写投保人姓名。]]>
+			</errmsg>
+		</required>
+		<minSize num="2">
+			<errmsg>
+  			<![CDATA[投保人姓名：请填写投保人姓名必须在 2~20 个字之间。]]>
+			</errmsg>
+		</minSize>
+		<maxSize num="20">
+			<errmsg>
+  			<![CDATA[投保人姓名：投保人姓名：请填写投保人姓名必须在 2~20 个字之间。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+
+	<item name="holder_birthday">
+		<required>
+			<errmsg>
+  				<![CDATA[投保人出生日期：请选择投保人出生日期。]]>
+			</errmsg>
+		</required>
+		<regx rule="date">
+			<errmsg>
+  			<![CDATA[投保人出生日期：投保人出生日期格式不正确。]]>
+			</errmsg>
+		</regx>
+		<ageRange min="18" max="70">
+			<errmsg>
+  			<![CDATA[投保人出生日期：请正确填写投保人出生日期，有效范围为 18-70 周岁，如 1970-08-08。]]>
+			</errmsg>
+		</ageRange>
+		<maxSize num="10">
+			<errmsg>
+  			<![CDATA[投保人出生日期：投保人出生日期格式不正确。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+	
+	<item name="holder_card_type">
+		<required>
+			<errmsg>
+  			<![CDATA[投保人证件类型：请选择被保人证件类型。]]>
+			</errmsg>
+		</required>
+	</item>
+	
+	<item name="holder_card_no">
+		<required>
+			<errmsg>
+  			<![CDATA[投保人证件号码：请填写被保人证件号码。]]>
+			</errmsg>
+		</required>
+		<idCard>
+           <when>
+              <boolexpr right="1" left="#holder_card_type" op="eq" />
+           </when>
+           <errmsg>
+               <![CDATA[投保人证件号码：请正确填写身份证号码。]]>
+           </errmsg>
+       </idCard>
+       <idCardUnion birthdayItem="#holder_birthday">
+           <when>
+              <boolexpr right="1" left="#holder_card_type" op="eq" />
+           </when>
+           <errmsg>
+               <![CDATA[投保人证件号码：你填写的身份证信息与你选择的出生日期不一致。]]>
+           </errmsg>
+       </idCardUnion>
+		<maxSize num="18">
+			<errmsg>
+  			<![CDATA[投保人证件号码：请正确填写投保人证件号码。]]>
+			</errmsg>
+		</maxSize>
+		<minSize num="15">
+			<errmsg>
+  			<![CDATA[投保人证件号码：请正确填写投保人证件号码。]]>
+			</errmsg>
+		</minSize>
+	</item>	
+	
+	<item name="holder_email">
+		<required>
+			<errmsg>
+  			<![CDATA[投保人Email：请填写投保人Email。]]>
+			</errmsg>
+		</required>
+		<regx rule="email">
+			<errmsg>
+  				<![CDATA[投保人Email：请正确填写投保人Email地址。]]>
+			</errmsg>
+		</regx>
+		<maxSize num="60">
+			<errmsg>
+  			<![CDATA[投保人Email：请正确填写投保人Email地址。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+
+	<item name="holder_phone_area">
+		<required>
+			<when>
+				<or>
+					<boolexpr right="" left="#holder_phone_mobile" op="eq" />
+					<boolexpr right="" left="#holder_phone" op="ne" />
+				</or>
+			</when>
+			<errmsg>
+  				<![CDATA[投保人固定电话：请填写投保人固定电话区号。]]>
+			</errmsg>
+		</required>
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[投保人固定电话：请正确填写投保人固定电话的区号，仅包含数字。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#holder_phone_area" op="ne" />
+			</when>
+		</regx>
+		<maxSize num="4">
+			<when>
+				<boolexpr right="" left="#holder_phone_area" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[投保人固定电话：请正确填写投保人固定电话的区号，不能多于4位。]]>
+			</errmsg>
+		</maxSize>
+		<minSize num="3">
+			<when>
+				<boolexpr right="" left="#holder_phone_area" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[投保人固定电话：请正确填写投保人固定电话的区号，不能少于3位。]]>
+			</errmsg>
+		</minSize>
+	</item>
+	
+	<item name="holder_phone">
+		<required>
+			<when>
+				<or>
+					<boolexpr right="" left="#holder_phone_mobile" op="eq" />
+					<boolexpr right="" left="#holder_phone_area" op="ne" />
+				</or>
+			</when>
+			<errmsg>
+  				<![CDATA[投保人固定电话：请填写投保人固定电话的主机号。]]>
+			</errmsg>
+		</required>
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[投保人固定电话：请填写投保人固定电话的主机号，仅能包含数字。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#holder_phone" op="ne" />
+			</when>
+		</regx>
+		<maxSize num="8">
+			<when>
+				<boolexpr right="" left="#holder_phone" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[投保人固定电话：请正确填写投保人固定电话的主机号，不能大于8位。]]>
+			</errmsg>
+		</maxSize>
+		<minSize num="7">
+			<when>
+				<boolexpr right="" left="#holder_phone" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[投保人固定电话：请正确填写投保人固定电话的主机号, 不能少于7位。]]>
+			</errmsg>
+		</minSize>
+	</item>
+	
+	<item name="holder_phone_mobile">
+		<required>
+			<when>
+				<and>
+					<boolexpr right="" left="#holder_phone_area" op="eq" />
+					<boolexpr right="" left="#holder_phone" op="eq" />
+				</and>
+			</when>
+			<errmsg>
+  				<![CDATA[投保人手机：请填写投保人联系方式。]]>
+			</errmsg>
+		</required>
+		<length num="11">
+			<errmsg>
+  				<![CDATA[投保人手机：请正确填写投保人手机。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#holder_phone_mobile" op="ne" />
+			</when>
+		</length>
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[投保人手机：请正确填写投保人手机。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#holder_phone_mobile" op="ne" />
+			</when>
+		</regx>
+	</item>
+	
+	<item name="holder_relation">
+		<required>
+			<errmsg>
+  			<![CDATA[与被保人关系：请正确选择投保人与被保人关系。]]>
+			</errmsg>
+		</required>
+	</item>
+
+
+	<item name="insurant_name">
+		<required>
+			<errmsg>
+  			<![CDATA[被保人姓名：请填写被保人姓名。]]>
+			</errmsg>
+		</required>
+		<minSize num="2">
+			<errmsg>
+  			<![CDATA[被保人姓名：请填写被保人姓名必须在 2~20 个字之间。]]>
+			</errmsg>
+		</minSize>
+		<maxSize num="20">
+			<errmsg>
+  			<![CDATA[被保人姓名：被保人姓名：请填写被保人姓名必须在 2~20 个字之间。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+	
+	<item name="insurant_email">
+		<required>
+			<errmsg>
+  			<![CDATA[被保人Email：请填写被保人Email。]]>
+			</errmsg>
+		</required>
+		<regx rule="email">
+			<errmsg>
+  				<![CDATA[被保人Email：请正确填写被保人Email地址。]]>
+			</errmsg>
+		</regx>
+		<maxSize num="60">
+			<errmsg>
+  			<![CDATA[被保人Email：请正确填写被保人Email地址。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+	
+	<item name="insurant_sex">
+		<required>
+			<errmsg>
+  			<![CDATA[被保人性别：请选择被保人性别。]]>
+			</errmsg>
+		</required>
+	</item>
+	
+	<item name="insurant_birthday">
+		<required>
+			<errmsg>
+  				<![CDATA[被保人出生日期：请选择被保人出生日期。]]>
+			</errmsg>
+		</required>
+		<regx rule="date">
+			<errmsg>
+  			<![CDATA[被保人出生日期：被保人出生日期格式不正确。]]>
+			</errmsg>
+		</regx>
+		<ageRange min="18" max="65">
+			<errmsg>
+  			<![CDATA[被保人出生日期：请正确填写被保人出生日期，有效范围为 18-65 周岁，如 1970-08-08。]]>
+			</errmsg>
+		</ageRange>
+		<maxSize num="10">
+			<errmsg>
+  			<![CDATA[被保人出生日期：被保人出生日期格式不正确。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+	
+	<item name="insurant_card_type">
+		<required>
+			<errmsg>
+  			<![CDATA[被保人证件类型：请选择被保人证件类型。]]>
+			</errmsg>
+		</required>
+	</item>
+	
+	<item name="insurant_card_no">
+		<required>
+			<errmsg>
+  			<![CDATA[被保人身份证号码：请填写被保人证件号码。]]>
+			</errmsg>
+		</required>
+		<idCard>
+           <when>
+              <boolexpr right="1" left="#insurant_card_type" op="eq" />
+           </when>
+           <errmsg>
+               <![CDATA[被保人身份证号码：请正确填写身份证号码。]]>
+           </errmsg>
+       </idCard>
+       <idCardUnion birthdayItem="#insurant_birthday" genderItem="#insurant_sex">
+           <when>
+              <boolexpr right="1" left="#insurant_card_type" op="eq" />
+           </when>
+           <errmsg>
+               <![CDATA[被保人身份证号码：你填写的身份证信息与你选择的出生日期或性别不一致。]]>
+           </errmsg>
+       </idCardUnion>
+		<maxSize num="60">
+			<errmsg>
+  			<![CDATA[被保人身份证号码：请正确填写被保人身份证号码。]]>
+			</errmsg>
+		</maxSize>
+	</item>	
+	
+	<item name="insurant_phone_area">
+		<required>
+			<when>
+				<or>
+					<boolexpr right="" left="#insurant_phone_mobile" op="eq" />
+					<boolexpr right="" left="#insurant_phone" op="ne" />
+				</or>
+			</when>
+			<errmsg>
+  				<![CDATA[被保人固定电话：请填写被保人固定电话区号。]]>
+			</errmsg>
+		</required>
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[被保人固定电话：请正确填写被保人固定电话的区号，仅包含数字。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#insurant_phone_area" op="ne" />
+			</when>
+		</regx>
+		<maxSize num="4">
+			<when>
+				<boolexpr right="" left="#insurant_phone_area" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[被保人固定电话：请正确填写被保人固定电话的区号，不能多于4位。]]>
+			</errmsg>
+		</maxSize>
+		<minSize num="3">
+			<when>
+				<boolexpr right="" left="#insurant_phone_area" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[被保人固定电话：请正确填写被保人固定电话的区号，不能少于3位。]]>
+			</errmsg>
+		</minSize>
+	</item>
+	
+	<item name="insurant_phone">
+		<required>
+			<when>
+				<or>
+					<boolexpr right="" left="#insurant_phone_mobile" op="eq" />
+					<boolexpr right="" left="#insurant_phone_area" op="ne" />
+				</or>
+			</when>
+			<errmsg>
+  				<![CDATA[被保人固定电话：请填写被保人固定电话的主机号。]]>
+			</errmsg>
+		</required>
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[被保人固定电话：请填写被保人固定电话的主机号，仅能包含数字。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#insurant_phone" op="ne" />
+			</when>
+		</regx>
+		<maxSize num="8">
+			<when>
+				<boolexpr right="" left="#insurant_phone" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[被保人固定电话：请正确填写被保人固定电话的主机号，不能大于8位。]]>
+			</errmsg>
+		</maxSize>
+		<minSize num="7">
+			<when>
+				<boolexpr right="" left="#insurant_phone" op="ne" />
+			</when>
+			<errmsg>
+  			<![CDATA[被保人固定电话：请正确填写被保人固定电话的主机号, 不能少于7位。]]>
+			</errmsg>
+		</minSize>
+	</item>
+	
+	<item name="insurant_phone_mobile">
+		<required>
+			<when>
+				<and>
+					<boolexpr right="" left="#insurant_phone_area" op="eq" />
+					<boolexpr right="" left="#insurant_phone" op="eq" />
+				</and>
+			</when>
+			<errmsg>
+  				<![CDATA[被保人手机：请填写被保人联系方式。]]>
+			</errmsg>
+		</required>
+		<length num="11">
+			<errmsg>
+  				<![CDATA[被保人手机：请正确填写被保人手机。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#insurant_phone_mobile" op="ne" />
+			</when>
+		</length>
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[被保人手机：请正确填写投保人手机。]]>
+			</errmsg>
+			<when>
+				<boolexpr right="" left="#insurant_phone_mobile" op="ne" />
+			</when>
+		</regx>
+	</item>
+
+	<item name="insurant_address">
+		<required>
+			<errmsg>
+  				<![CDATA[被保人联系地址：请正确填写被保人联系地址。]]>
+			</errmsg>
+		</required>
+	</item>
+
+	<item name="insurant_postcode">
+		<required>
+			<errmsg>
+  				<![CDATA[被保人邮政编码：请正确填写被保人邮政编码。]]>
+			</errmsg>
+		</required>
+		
+		<regx rule="number">
+			<errmsg>
+  				<![CDATA[被保人所在地邮编：请填写保标所在地的邮编。]]>
+			</errmsg>
+		</regx>
+		
+		<minSize num="6">
+			<errmsg>
+  			<![CDATA[被保人邮政编码：被保人邮政编码必须为6位。]]>
+			</errmsg>
+		</minSize>
+
+		<maxSize num="6">
+			<errmsg>
+  			<![CDATA[被保人邮政编码：被保人邮政编码必须为6位。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+	
+	<item name="insurant_resident_province">
+		<required>
+			<errmsg>
+  				<![CDATA[被保人常驻地址：请正确填写被保人常驻地址。]]>
+			</errmsg>
+		</required>
+	</item>
+	
+	<item name="beneficiary_relation" inLoop="true">
+		<required>
+			<errmsg>
+  				<![CDATA[受益人和被投保人关系：请正确填写受益人和被投保人关系。]]>
+			</errmsg>
+		</required>
+	</item>
+
+	<item name="beneficiary_name" inLoop="true">
+		<required>
+			<when>	
+				<boolexpr right="-1" left="{beneficiary_relation}" op="ne"></boolexpr>
+			</when>
+			<errmsg>
+  				<![CDATA[受益人姓名：请正确填写受益人姓名。]]>
+			</errmsg>
+		</required>
+
+		<minSize num="2">
+			<when>	
+				<boolexpr right="-1" left="{beneficiary_relation}" op="ne"></boolexpr>
+			</when>
+			<errmsg>
+  			<![CDATA[受益人姓名：请填写投保人姓名必须在 2~20 个字之间。]]>
+			</errmsg>
+		</minSize>
+
+		<maxSize num="20">
+			<when>	
+				<boolexpr right="-1" left="{beneficiary_relation}" op="ne"></boolexpr>
+			</when>
+			<errmsg>
+  			<![CDATA[受益人姓名：投保人姓名：请填写投保人姓名必须在 2~20 个字之间。]]>
+			</errmsg>
+		</maxSize>
+	</item>
+		
+	<item name="beneficiary_ratio" inLoop="true" bound="true">
+		<sum result="100">
+			<when>
+				<and>
+					<boolexpr right="-1" left="{beneficiary_relation}" op="ne"></boolexpr>
+					<boolexpr right="" left="{beneficiary_relation}" op="ne"></boolexpr>
+				</and>
+			</when>
+			<errmsg>
+	  			<![CDATA[受益比例：请正确填写受益比例，受益比例之和必须为 100%。]]>
+			</errmsg>
+		</sum>
+	</item>
+	
+	<item name="beneficiary_ratio" inLoop="true">
+		<gt value="0">
+			<when>
+				<boolexpr right="-1" left="{beneficiary_relation}" op="ne"></boolexpr>
+			</when>
+			<errmsg>
+  				<![CDATA[受益比例：请正确填写受益比例，不能为0。]]>
+			</errmsg>
+		</gt>
+	</item>
+	
+	<item name="beneficiary_card_no" inLoop="true">
+		<required>
+			<when>	
+				<and>
+					<boolexpr right="-1" left="{beneficiary_relation}" op="ne"/>
+					<boolexpr right="1" left="{beneficiary_relation}" op="ne"/>
+				</and>
+			</when>
+			<errmsg>
+  				<![CDATA[受益人身份证号：请正确填写受益人身份证号。]]>
+			</errmsg>
+		</required>
+	</item>
+
+	
+	<item name="insurance_start_time">
+		<required>
+			<errmsg>
+  				<![CDATA[保险生效时间：请选择保险生效时间。]]>
+			</errmsg>
+		</required>
+		<regx rule="date">
+			<errmsg>
+  				<![CDATA[保险生效时间：请正确选择保险生效时间。]]>
+			</errmsg>
+		</regx>
+		<dateRange min="$!DateUtils.offsetDate(0,0,1)" max="$!DateUtils.offsetDate(0,0,30)">
+			<errmsg>
+				<![CDATA[保险生效时间：请正确选择保险生效时间，有效范围是次日零时到未来30日之内。]]>
+			</errmsg>
+		</dateRange>
+	</item>
+	
+	<item name="insurance_copies">
+		<required>
+			<errmsg>
+  				<![CDATA[投保份数：请正确选择投保份数。]]>
+			</errmsg>
+		</required>
+	</item>	
+	
+	<item name="insurance_plan">
+		<required>
+			<errmsg>
+  				<![CDATA[保障利益：请正确选择保障利益。]]>
+			</errmsg>
+		</required>
+	</item>	
+</check>

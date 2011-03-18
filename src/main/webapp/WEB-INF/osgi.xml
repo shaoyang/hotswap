@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+	<bean id="checkParser"	class="com.taobao.baoxian.osgi.check.CheckParser"/>
+	<bean id="osgiLoader" class="com.taobao.baoxian.osgi.loader.URLOsgiLoader" />
+	<bean id="osgiServiceManager" class="com.taobao.baoxian.osgi.impl.OsgiServiceManagerImpl"/>
+</beans>

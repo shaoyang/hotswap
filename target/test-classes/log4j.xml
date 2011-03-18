@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://toolkit.alibaba-inc.com/dtd/log4j/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!--
+		=====================================================================
+		根日志的输出
+		=====================================================================
+	-->
+	<appender name="ROOT" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/home/villasy/logs/baoxian.logs" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GBK" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c{1}] %m%n" />
+		</layout>
+	</appender>
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="ROOT" />
+	</root>
+	
+	<!-- log all logs to a separate log file every day -->
+	<!-- Dao 层日志 -->
+	
+	
+	<appender name="daoFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/home/villasy/logs/dao.logs"/>
+		<param name="datePattern" value="'.'yyyy-MM-dd"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} [%15.15t] %-5p %c{1}:%L - %m%n"/>
+		</layout>
+	</appender>
+	<logger name="com.taobao.baoxian.dao" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="daoFileAppender" />
+	</logger>
+	
+	<appender name="osgiFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/home/villasy/logs/osgi.logs"/>
+		<param name="datePattern" value="'.'yyyy-MM-dd"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} [%.10t] %-5p %c{1}:%L - %m%n"/>
+		</layout>		
+	</appender>
+	<logger name="com.taobao.baoxian.osgi" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="daoFileAppender" />
+	</logger>
+	
+	<appender name="controllerFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/home/villasy/logs/controller.logs"/>
+		<param name="datePattern" value="'.'yyyy-MM-dd"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} [%.10t] %-5p %c{1}:%L - %m%n"/>
+		</layout>
+	</appender>
+	<logger name="com.taobao.baoxian.controller" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="controllerFileAppender" />
+	</logger>
+	
+	<appender name="serviceFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/home/villasy/logs/service.logs"/>
+		<param name="datePattern" value="'.'yyyy-MM-dd"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} [%.10t] %-5p %c{1}:%L - %m%n"/>
+		</layout>
+	</appender>
+	<logger name="com.taobao.baoxian.service" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="serviceFileAppender" />
+	</logger>
+</log4j:configuration>

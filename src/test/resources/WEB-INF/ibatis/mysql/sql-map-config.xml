@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings 
+		enhancementEnabled="true" 
+		maxTransactions="3000"
+		maxRequests="3000" 
+		maxSessions="3000" 
+		useStatementNamespaces="true" />
+	<sqlMap resource="WEB-INF/ibatis/mysql/sqlmaps/item.xml" />
+</sqlMapConfig>

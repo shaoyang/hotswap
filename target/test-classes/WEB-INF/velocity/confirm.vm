@@ -1,0 +1,57 @@
+<div class="basic-mod hesuan">
+    <div class="hd">
+        <h3>投保人信息</h3>
+    </div>
+    <div class="bd">
+        <table class="ins-td">
+
+           <tr>
+                <th>
+		姓名：
+                </th>
+                <td>
+		$!tplVal.get('holder_name')
+                </td>
+                <th>
+		电子邮件：
+                </th>
+                <td class="email">
+                $!tplVal.get('holder_email')
+                </td>
+            </tr>
+            <tr>
+                <th>
+		出生日期：
+                </th>
+                <td>
+                $!tplVal.get('holder_birthday')
+                </td>
+		<th>
+		身份证号码：
+		</th>
+                <td>
+		#if($!{tplVal.get('holder_card_type')} == 1)
+			$!{tplVal.get('holder_card_no')}
+		#end
+		</td>
+            </tr>
+            <tr>
+		<th>
+		固定电话：
+                </th>
+                <td>
+		#if($!tplVal.get('holder_phone_area')!= '' && $!tplVal.get('holder_phone') != '')
+		$!tplVal.get('holder_phone_area')-$!tplVal.get('holder_phone')
+		#end	
+                </td>
+                <th>
+				手机：
+                </th>
+                <td>
+                    $!tplVal.get('holder_phone_mobile')
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

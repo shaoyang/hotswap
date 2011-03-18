@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Student List</title>
+</head>
+    
+<body>
+    <h2>Studet List</h2>
+    <table width="600" border="1" cellspacing="1" cellpadding="1">
+      <tr bgcolor="#999999">
+        <td>FirstName</td>
+        <td>LastName</td>
+      </tr>
+    	#foreach($student in $students)  
+      	<tr>
+        <td>$!{student.firstname}</td>
+        <td>$!{student.lastname}</td>
+      	</tr>
+    	#end
+    </table>
+</body>
+</html>
