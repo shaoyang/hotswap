@@ -1,0 +1,8 @@
+#Fri Mar 18 07:33:01 PDT 2011
+eclipse.preferences.version=1
+encoding//src/main/java/com/taobao/baoxian/osgi/check=GBK
+encoding//src/main/java/com/taobao/baoxian/osgi/check/validator/AgeRangeValidator.java=GBK
+encoding//src/main/java/com/taobao/baoxian/utils/HtmlEntity.java=GBK
+encoding//src/test/resources/WEB-INF/check.xml=GBK
+encoding//src/test/resources/WEB-INF/velocity/confirm.vm=GBK
+encoding//src/test/resources/log4j.xml=GBK
