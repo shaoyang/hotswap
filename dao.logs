@@ -1,0 +1,9 @@
+00:02:53,395 [           main] DEBUG OsgiServiceManagerImpl:31 - 加载Osgi类
+00:02:53,412 [           main] DEBUG OsgiServiceManagerImpl:22 - 返回Osgi实例
+00:02:53,413 [           main] DEBUG OsgiServiceManagerImpl:40 - 返回Osgi方法
+00:38:06,284 [           main] DEBUG OsgiServiceManagerImpl:31 - 加载Osgi类
+00:38:06,296 [           main] DEBUG OsgiServiceManagerImpl:22 - 返回Osgi实例
+00:38:06,296 [           main] DEBUG OsgiServiceManagerImpl:40 - 返回Osgi方法
+01:14:16,764 [           main] DEBUG OsgiServiceManagerImpl:31 - 加载Osgi类
+01:14:16,770 [           main] DEBUG OsgiServiceManagerImpl:22 - 返回Osgi实例
+01:14:16,771 [           main] DEBUG OsgiServiceManagerImpl:40 - 返回Osgi方法

@@ -1,0 +1,224 @@
+2011-02-23 01:29:02,435 DEBUG [SpringJUnit4ClassRunner] SpringJUnit4ClassRunner constructor called with [class com.taobao.test.osgi.TestOsgiServiceManager].
+2011-02-23 01:29:02,540 INFO  [TestContextManager] @TestExecutionListeners is not present for class [class com.taobao.test.osgi.TestOsgiServiceManager]: using defaults.
+2011-02-23 01:29:02,624 DEBUG [SpringJUnit4ClassRunner] Invoking test method [public void com.taobao.test.osgi.TestOsgiServiceManager.testGet()]
+2011-02-23 01:29:02,632 DEBUG [DependencyInjectionTestExecutionListener] Performing dependency injection for test context [[TestContext@f8395f testClass = TestOsgiServiceManager, locations = array<String>['classpath:WEB-INF/spring-dao.xml', 'classpath:WEB-INF/spring-service.xml', 'classpath:WEB-INF/spring-ibatis.xml', 'classpath:WEB-INF/spring-conf.xml'], testInstance = com.taobao.test.osgi.TestOsgiServiceManager@7e9ce2, testMethod = [null], testException = [null]]].
+2011-02-23 01:29:02,632 DEBUG [AbstractGenericContextLoader] Loading ApplicationContext for locations [classpath:WEB-INF/spring-dao.xml,classpath:WEB-INF/spring-service.xml,classpath:WEB-INF/spring-ibatis.xml,classpath:WEB-INF/spring-conf.xml].
+2011-02-23 01:29:02,723 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-dao.xml]
+2011-02-23 01:29:02,726 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:29:02,727 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:29:02,734 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:29:02,751 DEBUG [XmlBeanDefinitionReader] Loaded 1 bean definitions from location pattern [classpath:WEB-INF/spring-dao.xml]
+2011-02-23 01:29:02,752 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-service.xml]
+2011-02-23 01:29:02,752 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:29:02,753 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:29:02,757 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:29:02,757 DEBUG [XmlBeanDefinitionReader] Loaded 2 bean definitions from location pattern [classpath:WEB-INF/spring-service.xml]
+2011-02-23 01:29:02,757 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-ibatis.xml]
+2011-02-23 01:29:02,758 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:29:02,759 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:29:02,764 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:29:02,768 DEBUG [XmlBeanDefinitionReader] Loaded 4 bean definitions from location pattern [classpath:WEB-INF/spring-ibatis.xml]
+2011-02-23 01:29:02,768 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-conf.xml]
+2011-02-23 01:29:02,769 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:29:02,770 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:29:02,777 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:29:02,778 DEBUG [XmlBeanDefinitionReader] Loaded 1 bean definitions from location pattern [classpath:WEB-INF/spring-conf.xml]
+2011-02-23 01:29:02,787 INFO  [GenericApplicationContext] Refreshing org.springframework.context.support.GenericApplicationContext@4bfe6b: display name [org.springframework.context.support.GenericApplicationContext@4bfe6b]; startup date [Wed Feb 23 01:29:02 PST 2011]; root of context hierarchy
+2011-02-23 01:29:02,787 INFO  [GenericApplicationContext] Bean factory for application context [org.springframework.context.support.GenericApplicationContext@4bfe6b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@146b6db
+2011-02-23 01:29:02,787 DEBUG [GenericApplicationContext] 11 beans defined in org.springframework.context.support.GenericApplicationContext@4bfe6b: display name [org.springframework.context.support.GenericApplicationContext@4bfe6b]; startup date [Wed Feb 23 01:29:02 PST 2011]; root of context hierarchy
+2011-02-23 01:29:02,806 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'propertyConfigurer'
+2011-02-23 01:29:02,807 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'propertyConfigurer'
+2011-02-23 01:29:02,833 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'propertyConfigurer' to allow for resolving potential circular references
+2011-02-23 01:29:02,848 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'propertyConfigurer'
+2011-02-23 01:29:02,849 INFO  [PropertyPlaceholderConfigurer] Loading properties file from class path resource [WEB-INF/conf/baoxian_dev.properties]
+2011-02-23 01:29:02,853 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:29:02,853 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:29:02,859 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+2011-02-23 01:29:02,863 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:29:02,863 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:29:02,863 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:29:02,864 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+2011-02-23 01:29:02,867 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:29:02,867 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:29:02,867 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:29:02,868 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+2011-02-23 01:29:02,871 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:29:02,872 DEBUG [GenericApplicationContext] Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@523df]
+2011-02-23 01:29:02,874 DEBUG [GenericApplicationContext] Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@f19d6e]
+2011-02-23 01:29:02,875 INFO  [DefaultListableBeanFactory] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@146b6db: defining beans [tfsDao,tfsManager,osgiServiceManager,mysqlDataSource,transactionManager,transactionTemplate,mysqlClient,propertyConfigurer,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+2011-02-23 01:29:02,875 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'tfsDao'
+2011-02-23 01:29:02,875 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'tfsDao'
+2011-02-23 01:29:02,882 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'tfsDao' to allow for resolving potential circular references
+2011-02-23 01:29:02,889 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'mysqlClient'
+2011-02-23 01:29:02,889 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'mysqlClient'
+2011-02-23 01:29:02,892 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'mysqlClient' to allow for resolving potential circular references
+2011-02-23 01:29:02,896 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'mysqlDataSource'
+2011-02-23 01:29:02,896 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'mysqlDataSource'
+2011-02-23 01:29:02,905 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'mysqlDataSource' to allow for resolving potential circular references
+2011-02-23 01:29:02,917 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'mysqlDataSource'
+2011-02-23 01:29:02,917 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name 'mysqlClient'
+2011-02-23 01:29:03,059 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'mysqlClient'
+2011-02-23 01:29:03,060 DEBUG [DefaultListableBeanFactory] Added autowiring by name from bean name 'tfsDao' via property 'mysqlClient' to bean named 'mysqlClient'
+2011-02-23 01:29:03,060 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'tfsDao'
+2011-02-23 01:29:03,060 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'tfsManager'
+2011-02-23 01:29:03,060 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'tfsManager'
+2011-02-23 01:29:03,061 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'tfsManager' to allow for resolving potential circular references
+2011-02-23 01:29:03,063 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'tfsDao'
+2011-02-23 01:29:03,063 DEBUG [DefaultListableBeanFactory] Added autowiring by name from bean name 'tfsManager' via property 'tfsDao' to bean named 'tfsDao'
+2011-02-23 01:29:03,063 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'tfsManager'
+2011-02-23 01:29:03,063 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'osgiServiceManager'
+2011-02-23 01:29:03,063 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'osgiServiceManager'
+2011-02-23 01:29:03,063 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'osgiServiceManager' to allow for resolving potential circular references
+2011-02-23 01:29:03,066 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'osgiServiceManager'
+2011-02-23 01:29:03,066 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'mysqlDataSource'
+2011-02-23 01:29:03,066 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'transactionManager'
+2011-02-23 01:29:03,066 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'transactionManager'
+2011-02-23 01:29:03,076 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'transactionManager' to allow for resolving potential circular references
+2011-02-23 01:29:03,082 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'mysqlDataSource'
+2011-02-23 01:29:03,083 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name 'transactionManager'
+2011-02-23 01:29:03,083 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'transactionManager'
+2011-02-23 01:29:03,083 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'transactionTemplate'
+2011-02-23 01:29:03,083 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'transactionTemplate'
+2011-02-23 01:29:03,085 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'transactionTemplate' to allow for resolving potential circular references
+2011-02-23 01:29:03,090 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'transactionManager'
+2011-02-23 01:29:03,090 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name 'transactionTemplate'
+2011-02-23 01:29:03,091 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'transactionTemplate'
+2011-02-23 01:29:03,091 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'mysqlClient'
+2011-02-23 01:29:03,091 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'propertyConfigurer'
+2011-02-23 01:29:03,091 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:29:03,091 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:29:03,091 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:29:03,096 DEBUG [InjectionMetadata] Found injected field on class [com.taobao.test.osgi.TestOsgiServiceManager]: ResourceElement for private com.taobao.baoxian.osgi.OsgiServiceManager com.taobao.test.osgi.TestOsgiServiceManager.osgiServiceManager
+2011-02-23 01:29:03,097 DEBUG [InjectionMetadata] Found injected field on class [com.taobao.test.osgi.TestOsgiServiceManager]: ResourceElement for private com.taobao.baoxian.tfs.TfsManager com.taobao.test.osgi.TestOsgiServiceManager.tfsManager
+2011-02-23 01:29:03,098 DEBUG [InjectionMetadata] Processing injected field of bean 'com.taobao.test.osgi.TestOsgiServiceManager': ResourceElement for private com.taobao.baoxian.osgi.OsgiServiceManager com.taobao.test.osgi.TestOsgiServiceManager.osgiServiceManager
+2011-02-23 01:29:03,098 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'osgiServiceManager'
+2011-02-23 01:29:03,098 DEBUG [InjectionMetadata] Processing injected field of bean 'com.taobao.test.osgi.TestOsgiServiceManager': ResourceElement for private com.taobao.baoxian.tfs.TfsManager com.taobao.test.osgi.TestOsgiServiceManager.tfsManager
+2011-02-23 01:29:03,098 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'tfsManager'
+2011-02-23 01:29:03,160 DEBUG [Connection] {conn-100000} Connection
+2011-02-23 01:29:03,185 DEBUG [Connection] {conn-100000} Preparing Statement:       select id,itemid,jarpath from item where itemid=?     
+2011-02-23 01:29:03,205 DEBUG [DataSourceUtils] Fetching JDBC Connection from DataSource
+2011-02-23 01:29:03,487 DEBUG [PreparedStatement] {pstm-100001} Executing Statement:       select id,itemid,jarpath from item where itemid=?     
+2011-02-23 01:29:03,487 DEBUG [PreparedStatement] {pstm-100001} Parameters: [100]
+2011-02-23 01:29:03,487 DEBUG [PreparedStatement] {pstm-100001} Types: [java.lang.Integer]
+2011-02-23 01:29:03,491 DEBUG [ResultSet] {rset-100002} ResultSet
+2011-02-23 01:29:03,513 DEBUG [ResultSet] {rset-100002} Header: [id, itemid, jarpath]
+2011-02-23 01:29:03,513 DEBUG [ResultSet] {rset-100002} Result: [1, 100, /home/villasy/resources/laoyizhuang.jar]
+2011-02-23 01:29:03,516 DEBUG [DataSourceUtils] Returning JDBC Connection to DataSource
+2011-02-23 01:29:03,534 DEBUG [SpringMethodRoadie] Test method [public void com.taobao.test.osgi.TestOsgiServiceManager.testGet()] threw exception: null
+2011-02-23 01:29:03,535 DEBUG [DirtiesContextTestExecutionListener] After test method: context [[TestContext@f8395f testClass = TestOsgiServiceManager, locations = array<String>['classpath:WEB-INF/spring-dao.xml', 'classpath:WEB-INF/spring-service.xml', 'classpath:WEB-INF/spring-ibatis.xml', 'classpath:WEB-INF/spring-conf.xml'], testInstance = com.taobao.test.osgi.TestOsgiServiceManager@7e9ce2, testMethod = testGet@TestOsgiServiceManager, testException = [null]]], dirtiesContext [false].
+2011-02-23 01:29:03,547 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@4bfe6b: display name [org.springframework.context.support.GenericApplicationContext@4bfe6b]; startup date [Wed Feb 23 01:29:02 PST 2011]; root of context hierarchy
+2011-02-23 01:29:03,547 INFO  [DefaultListableBeanFactory] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@146b6db: defining beans [tfsDao,tfsManager,osgiServiceManager,mysqlDataSource,transactionManager,transactionTemplate,mysqlClient,propertyConfigurer,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+2011-02-23 01:29:03,547 DEBUG [DefaultListableBeanFactory] Retrieved dependent beans for bean 'osgiServiceManager': [com.taobao.test.osgi.TestOsgiServiceManager]
+2011-02-23 01:29:03,547 DEBUG [DisposableBeanAdapter] Invoking destroy method 'close' on bean with name 'mysqlDataSource'
+2011-02-23 01:52:19,619 DEBUG [SpringJUnit4ClassRunner] SpringJUnit4ClassRunner constructor called with [class com.taobao.test.osgi.TestOsgiServiceManager].
+2011-02-23 01:52:19,689 INFO  [TestContextManager] @TestExecutionListeners is not present for class [class com.taobao.test.osgi.TestOsgiServiceManager]: using defaults.
+2011-02-23 01:52:19,763 DEBUG [SpringJUnit4ClassRunner] Invoking test method [public void com.taobao.test.osgi.TestOsgiServiceManager.testGet()]
+2011-02-23 01:52:19,772 DEBUG [DependencyInjectionTestExecutionListener] Performing dependency injection for test context [[TestContext@f8395f testClass = TestOsgiServiceManager, locations = array<String>['classpath:WEB-INF/spring-dao.xml', 'classpath:WEB-INF/spring-service.xml', 'classpath:WEB-INF/spring-ibatis.xml', 'classpath:WEB-INF/spring-conf.xml'], testInstance = com.taobao.test.osgi.TestOsgiServiceManager@7e9ce2, testMethod = [null], testException = [null]]].
+2011-02-23 01:52:19,772 DEBUG [AbstractGenericContextLoader] Loading ApplicationContext for locations [classpath:WEB-INF/spring-dao.xml,classpath:WEB-INF/spring-service.xml,classpath:WEB-INF/spring-ibatis.xml,classpath:WEB-INF/spring-conf.xml].
+2011-02-23 01:52:19,896 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-dao.xml]
+2011-02-23 01:52:19,899 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:52:19,900 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:52:19,907 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:52:19,925 DEBUG [XmlBeanDefinitionReader] Loaded 1 bean definitions from location pattern [classpath:WEB-INF/spring-dao.xml]
+2011-02-23 01:52:19,925 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-service.xml]
+2011-02-23 01:52:19,926 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:52:19,927 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:52:19,931 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:52:19,931 DEBUG [XmlBeanDefinitionReader] Loaded 2 bean definitions from location pattern [classpath:WEB-INF/spring-service.xml]
+2011-02-23 01:52:19,931 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-ibatis.xml]
+2011-02-23 01:52:19,932 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:52:19,933 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:52:19,938 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:52:19,942 DEBUG [XmlBeanDefinitionReader] Loaded 4 bean definitions from location pattern [classpath:WEB-INF/spring-ibatis.xml]
+2011-02-23 01:52:19,942 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [WEB-INF/spring-conf.xml]
+2011-02-23 01:52:19,942 DEBUG [DefaultDocumentLoader] Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2011-02-23 01:52:19,943 DEBUG [BeansDtdResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath: spring-beans.dtd
+2011-02-23 01:52:19,951 DEBUG [DefaultBeanDefinitionDocumentReader] Loading bean definitions
+2011-02-23 01:52:19,952 DEBUG [XmlBeanDefinitionReader] Loaded 1 bean definitions from location pattern [classpath:WEB-INF/spring-conf.xml]
+2011-02-23 01:52:19,961 INFO  [GenericApplicationContext] Refreshing org.springframework.context.support.GenericApplicationContext@4bfe6b: display name [org.springframework.context.support.GenericApplicationContext@4bfe6b]; startup date [Wed Feb 23 01:52:19 PST 2011]; root of context hierarchy
+2011-02-23 01:52:19,961 INFO  [GenericApplicationContext] Bean factory for application context [org.springframework.context.support.GenericApplicationContext@4bfe6b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@18f6559
+2011-02-23 01:52:19,961 DEBUG [GenericApplicationContext] 11 beans defined in org.springframework.context.support.GenericApplicationContext@4bfe6b: display name [org.springframework.context.support.GenericApplicationContext@4bfe6b]; startup date [Wed Feb 23 01:52:19 PST 2011]; root of context hierarchy
+2011-02-23 01:52:19,980 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'propertyConfigurer'
+2011-02-23 01:52:19,982 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'propertyConfigurer'
+2011-02-23 01:52:20,007 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'propertyConfigurer' to allow for resolving potential circular references
+2011-02-23 01:52:20,022 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'propertyConfigurer'
+2011-02-23 01:52:20,022 INFO  [PropertyPlaceholderConfigurer] Loading properties file from class path resource [WEB-INF/conf/baoxian_dev.properties]
+2011-02-23 01:52:20,026 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:52:20,027 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:52:20,033 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+2011-02-23 01:52:20,037 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:52:20,037 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:52:20,037 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:52:20,038 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+2011-02-23 01:52:20,041 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:52:20,041 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:52:20,041 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:52:20,042 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+2011-02-23 01:52:20,045 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:52:20,046 DEBUG [GenericApplicationContext] Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@523df]
+2011-02-23 01:52:20,048 DEBUG [GenericApplicationContext] Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@f19d6e]
+2011-02-23 01:52:20,048 INFO  [DefaultListableBeanFactory] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18f6559: defining beans [tfsDao,tfsManager,osgiServiceManager,mysqlDataSource,transactionManager,transactionTemplate,mysqlClient,propertyConfigurer,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+2011-02-23 01:52:20,049 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'tfsDao'
+2011-02-23 01:52:20,049 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'tfsDao'
+2011-02-23 01:52:20,056 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'tfsDao' to allow for resolving potential circular references
+2011-02-23 01:52:20,062 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'mysqlClient'
+2011-02-23 01:52:20,062 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'mysqlClient'
+2011-02-23 01:52:20,066 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'mysqlClient' to allow for resolving potential circular references
+2011-02-23 01:52:20,069 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'mysqlDataSource'
+2011-02-23 01:52:20,069 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'mysqlDataSource'
+2011-02-23 01:52:20,079 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'mysqlDataSource' to allow for resolving potential circular references
+2011-02-23 01:52:20,092 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'mysqlDataSource'
+2011-02-23 01:52:20,092 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name 'mysqlClient'
+2011-02-23 01:52:20,233 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'mysqlClient'
+2011-02-23 01:52:20,234 DEBUG [DefaultListableBeanFactory] Added autowiring by name from bean name 'tfsDao' via property 'mysqlClient' to bean named 'mysqlClient'
+2011-02-23 01:52:20,235 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'tfsDao'
+2011-02-23 01:52:20,235 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'tfsManager'
+2011-02-23 01:52:20,235 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'tfsManager'
+2011-02-23 01:52:20,235 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'tfsManager' to allow for resolving potential circular references
+2011-02-23 01:52:20,237 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'tfsDao'
+2011-02-23 01:52:20,237 DEBUG [DefaultListableBeanFactory] Added autowiring by name from bean name 'tfsManager' via property 'tfsDao' to bean named 'tfsDao'
+2011-02-23 01:52:20,237 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'tfsManager'
+2011-02-23 01:52:20,237 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'osgiServiceManager'
+2011-02-23 01:52:20,237 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'osgiServiceManager'
+2011-02-23 01:52:20,238 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'osgiServiceManager' to allow for resolving potential circular references
+2011-02-23 01:52:20,240 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'osgiServiceManager'
+2011-02-23 01:52:20,240 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'mysqlDataSource'
+2011-02-23 01:52:20,240 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'transactionManager'
+2011-02-23 01:52:20,240 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'transactionManager'
+2011-02-23 01:52:20,250 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'transactionManager' to allow for resolving potential circular references
+2011-02-23 01:52:20,256 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'mysqlDataSource'
+2011-02-23 01:52:20,256 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name 'transactionManager'
+2011-02-23 01:52:20,257 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'transactionManager'
+2011-02-23 01:52:20,257 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean 'transactionTemplate'
+2011-02-23 01:52:20,257 DEBUG [DefaultListableBeanFactory] Creating instance of bean 'transactionTemplate'
+2011-02-23 01:52:20,259 DEBUG [DefaultListableBeanFactory] Eagerly caching bean 'transactionTemplate' to allow for resolving potential circular references
+2011-02-23 01:52:20,264 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'transactionManager'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name 'transactionTemplate'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Finished creating instance of bean 'transactionTemplate'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'mysqlClient'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'propertyConfigurer'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2011-02-23 01:52:20,265 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2011-02-23 01:52:20,270 DEBUG [InjectionMetadata] Found injected field on class [com.taobao.test.osgi.TestOsgiServiceManager]: ResourceElement for private com.taobao.baoxian.osgi.OsgiServiceManager com.taobao.test.osgi.TestOsgiServiceManager.osgiServiceManager
+2011-02-23 01:52:20,270 DEBUG [InjectionMetadata] Found injected field on class [com.taobao.test.osgi.TestOsgiServiceManager]: ResourceElement for private com.taobao.baoxian.tfs.TfsManager com.taobao.test.osgi.TestOsgiServiceManager.tfsManager
+2011-02-23 01:52:20,271 DEBUG [InjectionMetadata] Processing injected field of bean 'com.taobao.test.osgi.TestOsgiServiceManager': ResourceElement for private com.taobao.baoxian.osgi.OsgiServiceManager com.taobao.test.osgi.TestOsgiServiceManager.osgiServiceManager
+2011-02-23 01:52:20,271 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'osgiServiceManager'
+2011-02-23 01:52:20,271 DEBUG [InjectionMetadata] Processing injected field of bean 'com.taobao.test.osgi.TestOsgiServiceManager': ResourceElement for private com.taobao.baoxian.tfs.TfsManager com.taobao.test.osgi.TestOsgiServiceManager.tfsManager
+2011-02-23 01:52:20,271 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean 'tfsManager'
+2011-02-23 01:52:20,335 DEBUG [Connection] {conn-100000} Connection
+2011-02-23 01:52:20,350 DEBUG [Connection] {conn-100000} Preparing Statement:       select id,itemid,jarpath from item where itemid=?     
+2011-02-23 01:52:20,374 DEBUG [DataSourceUtils] Fetching JDBC Connection from DataSource
+2011-02-23 01:52:21,949 DEBUG [PreparedStatement] {pstm-100001} Executing Statement:       select id,itemid,jarpath from item where itemid=?     
+2011-02-23 01:52:21,949 DEBUG [PreparedStatement] {pstm-100001} Parameters: [100]
+2011-02-23 01:52:21,949 DEBUG [PreparedStatement] {pstm-100001} Types: [java.lang.Integer]
+2011-02-23 01:52:21,955 DEBUG [ResultSet] {rset-100002} ResultSet
+2011-02-23 01:52:21,989 DEBUG [ResultSet] {rset-100002} Header: [id, itemid, jarpath]
+2011-02-23 01:52:21,989 DEBUG [ResultSet] {rset-100002} Result: [1, 100, /home/villasy/resources/laoyizhuang.jar]
+2011-02-23 01:52:21,994 DEBUG [DataSourceUtils] Returning JDBC Connection to DataSource
+2011-02-23 01:52:22,093 DEBUG [SpringMethodRoadie] Test method [public void com.taobao.test.osgi.TestOsgiServiceManager.testGet()] threw exception: null
+2011-02-23 01:52:22,095 DEBUG [DirtiesContextTestExecutionListener] After test method: context [[TestContext@f8395f testClass = TestOsgiServiceManager, locations = array<String>['classpath:WEB-INF/spring-dao.xml', 'classpath:WEB-INF/spring-service.xml', 'classpath:WEB-INF/spring-ibatis.xml', 'classpath:WEB-INF/spring-conf.xml'], testInstance = com.taobao.test.osgi.TestOsgiServiceManager@7e9ce2, testMethod = testGet@TestOsgiServiceManager, testException = [null]]], dirtiesContext [false].
+2011-02-23 01:52:22,114 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@4bfe6b: display name [org.springframework.context.support.GenericApplicationContext@4bfe6b]; startup date [Wed Feb 23 01:52:19 PST 2011]; root of context hierarchy
+2011-02-23 01:52:22,124 INFO  [DefaultListableBeanFactory] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18f6559: defining beans [tfsDao,tfsManager,osgiServiceManager,mysqlDataSource,transactionManager,transactionTemplate,mysqlClient,propertyConfigurer,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+2011-02-23 01:52:22,193 DEBUG [DefaultListableBeanFactory] Retrieved dependent beans for bean 'osgiServiceManager': [com.taobao.test.osgi.TestOsgiServiceManager]
+2011-02-23 01:52:22,194 DEBUG [DisposableBeanAdapter] Invoking destroy method 'close' on bean with name 'mysqlDataSource'
